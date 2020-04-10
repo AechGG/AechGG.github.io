@@ -27,12 +27,7 @@ const NavBar = (props) => {
   return (
     <div>
       <AppBar position="static" className={classes.container}>
-        <Toolbar className={classes.toolbar}>
-          {/* <Typography variant="title" color="inherit">
-            React & Material-UI Sample Application
-          </Typography> */}
-          {children}
-        </Toolbar>
+        <Toolbar className={classes.toolbar}>{children}</Toolbar>
       </AppBar>
     </div>
   );
