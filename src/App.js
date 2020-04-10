@@ -1,21 +1,14 @@
 import React from 'react';
 import { HashRouter, Route, Link } from 'react-router-dom';
 
-import logo from './logo.svg';
+import NavBar from './components/NavBar';
 import './App.css';
 
 function App() {
   return (
     <HashRouter basename="/">
       <div>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
+        <NavBar />
 
         <hr />
 
