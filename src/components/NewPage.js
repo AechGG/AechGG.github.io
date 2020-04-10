@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
+import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles({
   link: {
@@ -15,7 +16,9 @@ export const NewPage = (props) => {
   const classes = useStyles();
   return (
     <Link to={to} className={classes.link}>
-      {title}
+      <Typography variant="title" color="inherit">
+        {title}
+      </Typography>
     </Link>
   );
 };

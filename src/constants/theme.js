@@ -11,6 +11,9 @@ export const themeObject = (initTheme) => {
         main: '#000000',
       },
     },
+    typography: {
+      fontFamily: 'Arial',
+    },
   };
 };
 
