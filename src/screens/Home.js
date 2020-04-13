@@ -1,8 +1,9 @@
 import React from 'react';
-import MainContent from '../components/MainContent';
 
-const Home = (props) => {
-  return <MainContent />;
+import GridContent from '../components/GridContent';
+
+const Home = () => {
+  return <GridContent />;
 };
 
 export default Home;
