@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import {
   Card,
@@ -88,7 +87,19 @@ export default function CenteredGrid() {
           </Card>
         </Grid>
         <Grid item xs={6}>
-          <Paper className={classes.paper}>xs=6</Paper>
+          <Card className={classes.card}>
+            <CardActionArea>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  2020 Goals
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  A record of everything I want to achieve by the end of this
+                  year.
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          </Card>
         </Grid>
         <Grid item xs={6}>
           <Card className={classes.card}>
