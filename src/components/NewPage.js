@@ -16,7 +16,7 @@ export const NewPage = (props) => {
   const classes = useStyles();
   return (
     <Link to={to} className={classes.link}>
-      <Typography variant="title" color="inherit">
+      <Typography variant="inherit" color="textPrimary">
         {title}
       </Typography>
     </Link>

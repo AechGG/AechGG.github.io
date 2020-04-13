@@ -14,6 +14,7 @@ import logoWhite from './assets/logo-dark.png';
 import './App.css';
 import { NewPage } from './components/NewPage';
 import { useDarkMode } from './constants/theme';
+import Home from './screens/Home';
 
 function App() {
   const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
@@ -25,45 +26,36 @@ function App() {
   return (
     <MuiThemeProvider theme={themeConfig}>
       <HashRouter basename="/">
-        <div>
-          <NavBar>
-            <Link to="/">
-              <img
-                src={theme.palette.type === 'dark' ? logoBlack : logoWhite}
-                alt="logo"
-                width="50"
-                height="50"
-              />
-            </Link>
-            <NewPage to="/" title="Home" />
-            <NewPage to="/about" title="Projects" />
-            <NewPage to="/about" title="Uni Projects" />
-            <NewPage to="/about" title="Repos" />
-            <FormControlLabel
-              control={
-                <Switch
-                  onClick={toggleDarkMode}
-                  value={theme.palette.type === 'dark'}
-                />
-              }
+        <NavBar>
+          <Link to="/">
+            <img
+              src={theme.palette.type === 'dark' ? logoWhite : logoBlack}
+              alt="logo"
+              width="50"
+              height="50"
             />
-          </NavBar>
+          </Link>
+          <NewPage to="/" title="Home" />
+          <NewPage to="/about" title="Projects" />
+          <NewPage to="/about" title="Uni Projects" />
+          <NewPage to="/about" title="Repos" />
+          <FormControlLabel
+            control={
+              <Switch
+                onClick={toggleDarkMode}
+                value={theme.palette.type === 'dark'}
+              />
+            }
+          />
+        </NavBar>
 
-          <hr />
-
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-        </div>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
       </HashRouter>
     </MuiThemeProvider>
   );
 }
 
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
 const About = () => (
   <div>
     <h2>About</h2>
