@@ -10,6 +10,7 @@ import {
 import { HashRouter, Route, Link } from 'react-router-dom';
 
 import NavBar from './components/NavBar';
+import { SquareHoverButton } from './components/SquareHoverButton';
 import logoBlack from './assets/logo-main.png';
 import logoWhite from './assets/logo-dark.png';
 import './App.css';
@@ -36,6 +37,7 @@ function App() {
                 height="50"
               />
             </Link>
+            <SquareHoverButton title="HOME" to="/" />
             <FormControlLabel
               control={
                 <Switch

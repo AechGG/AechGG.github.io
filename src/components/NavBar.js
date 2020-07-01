@@ -8,7 +8,7 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'row !important',
     width: '100%',
-    height: '72px',
+    height: '82px',
     paddingLeft: '40px',
     paddingRight: '40px',
   },
@@ -26,7 +26,7 @@ const NavBar = (props) => {
   const classes = useStyles();
   return (
     <div>
-      <AppBar position="static" className={classes.container}>
+      <AppBar position="static" className={classes.container} color="default">
         <Toolbar className={classes.toolbar}>{children}</Toolbar>
       </AppBar>
     </div>
