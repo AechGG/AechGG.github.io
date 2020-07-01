@@ -9,15 +9,12 @@ const useStyles = makeStyles({
     flexDirection: 'row !important',
     width: '100%',
     height: '82px',
-    paddingLeft: '40px',
-    paddingRight: '40px',
   },
   toolbar: {
     width: '100%',
-    justifyContent: 'space-around',
     alignItems: 'center',
-    paddingLeft: 0,
-    paddingRight: 0,
+    paddingLeft: 60,
+    paddingRight: 60,
   },
 });
 
