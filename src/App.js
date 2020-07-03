@@ -24,6 +24,8 @@ import { useDarkMode } from './constants/theme';
 import config from './services/config.service';
 import Home from './screens/Home';
 
+import './App.css';
+
 // TODO: Alter app bar to be responsive
 
 const useStyles = makeStyles((theme) => ({
