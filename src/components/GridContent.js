@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import { Card, CardContent, Typography } from '@material-ui/core';
+import { Card, CardContent, Typography, Box } from '@material-ui/core';
 
 import FadeInSection from '../components/FadeInSection';
 
@@ -74,7 +74,31 @@ export default function CenteredGrid(props) {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}></Grid>
+          <Grid item xs={12}>
+            <Box>
+              App Development. Creating App Solutions for multiple platforms in
+              multiple languages and technologies including Swift, Flutter,
+              React Native and Java
+            </Box>
+          </Grid>
+          <Grid item xs={12}>
+            <Box>
+              Back-end Development. Experience in working in agile teams to
+              develop back-end technologies using Java, Node.js, Python,
+              Typescript. Using important frameworks such as GraphQL.
+            </Box>
+          </Grid>
+          <Grid item xs={12}>
+            <Box>
+              Full Stack Development. Worked in full stack environments,
+              developing in the full stack using a MERN solution stack. Focusing
+              on using React with other core technologies to create innovative
+              web solutions.
+            </Box>
+          </Grid>
+          <Grid item xs={12}>
+            <Box>DevOps and Cloud Development</Box>
+          </Grid>
         </Grid>
       </FadeInSection>
     </div>
