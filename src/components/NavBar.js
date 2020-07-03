@@ -8,16 +8,13 @@ const useStyles = makeStyles({
     display: 'flex',
     flexDirection: 'row !important',
     width: '100%',
-    height: '72px',
-    paddingLeft: '40px',
-    paddingRight: '40px',
+    height: '82px',
   },
   toolbar: {
     width: '100%',
-    justifyContent: 'space-around',
     alignItems: 'center',
-    paddingLeft: 0,
-    paddingRight: 0,
+    paddingLeft: 60,
+    paddingRight: 60,
   },
 });
 
@@ -26,7 +23,7 @@ const NavBar = (props) => {
   const classes = useStyles();
   return (
     <div>
-      <AppBar position="static" className={classes.container}>
+      <AppBar position="static" className={classes.container} color="default">
         <Toolbar className={classes.toolbar}>{children}</Toolbar>
       </AppBar>
     </div>

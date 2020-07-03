@@ -5,7 +5,7 @@ export const themeObject = (initTheme) => {
     palette: {
       type: initTheme,
       primary: {
-        main: '#1976d2',
+        main: '#fff',
       },
       secondary: {
         main: '#000000',
