@@ -25,6 +25,9 @@ import { useDarkMode } from './constants/theme';
 import config from './services/config.service';
 import Home from './screens/Home';
 
+// TODO: Put logos in seperate component
+// TODO: Alter app bat to be responsive
+
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
@@ -63,15 +66,15 @@ function App() {
             <SquareHoverButton title="work" to="/" />
             <SquareHoverButton title="contact" to="/" />
             <div className={classes.grow} />
-            <Link to="/github" className={classes.socialLink}>
+            <a href={config.github} className={classes.socialLink}>
               <img
                 src={theme.palette.type === 'dark' ? githubWhite : githubBlack}
                 alt="github"
                 width="50"
                 height="50"
               />
-            </Link>
-            <Link to="/linkedin" className={classes.socialLink}>
+            </a>
+            <a href={config.linkedin} className={classes.socialLink}>
               <img
                 src={
                   theme.palette.type === 'dark' ? linkedinWhite : linkedinBlack
@@ -80,7 +83,7 @@ function App() {
                 width="50"
                 height="50"
               />
-            </Link>
+            </a>
             <FormControlLabel
               control={
                 <Switch
@@ -92,20 +95,6 @@ function App() {
           </NavBar>
 
           <Route exact path="/" component={Home} />
-          <Route
-            path="/github"
-            component={() => {
-              window.location.href = config.github;
-              return null;
-            }}
-          />
-          <Route
-            path="/linkedin"
-            component={() => {
-              window.location.href = config.linkedin;
-              return null;
-            }}
-          />
         </HashRouter>
       </CssBaseline>
     </MuiThemeProvider>
