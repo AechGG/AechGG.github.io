@@ -24,8 +24,7 @@ import { useDarkMode } from './constants/theme';
 import config from './services/config.service';
 import Home from './screens/Home';
 
-// TODO: Put logos in seperate component
-// TODO: Alter app bat to be responsive
+// TODO: Alter app bar to be responsive
 
 const useStyles = makeStyles((theme) => ({
   grow: {
