@@ -19,7 +19,6 @@ import githubBlack from './assets/github-black-logo.png';
 import githubWhite from './assets/github-white-logo.png';
 import linkedinBlack from './assets/linkedin-black-logo.png';
 import linkedinWhite from './assets/linkedin-white-logo.png';
-import './App.css';
 
 import { useDarkMode } from './constants/theme';
 import config from './services/config.service';
