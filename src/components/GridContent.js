@@ -1,9 +1,12 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import { Card, CardContent, Typography, Box } from '@material-ui/core';
+import { Card, CardContent, Typography } from '@material-ui/core';
 
-import FadeInSection from '../components/FadeInSection';
+import FadeInSection from './FadeInSection';
+import InfoContent from './InfoContent';
+
+import swiftLogo from '../assets/swift.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -75,29 +78,47 @@ export default function CenteredGrid(props) {
             </Card>
           </Grid>
           <Grid item xs={12}>
-            <Box>
-              App Development. Creating App Solutions for multiple platforms in
+            <InfoContent
+              title="app development"
+              mainText="Creating App Solutions for multiple platforms in
               multiple languages and technologies including Swift, Flutter,
-              React Native and Java
-            </Box>
+              React Native and Java"
+              exampleTitle="Here is an example"
+              exampleLink="www.google.com"
+              img={swiftLogo}
+            />
           </Grid>
           <Grid item xs={12}>
-            <Box>
-              Back-end Development. Experience in working in agile teams to
+            <InfoContent
+              title="back-end development"
+              mainText="Experience in working in agile teams to
               develop back-end technologies using Java, Node.js, Python,
-              Typescript. Using important frameworks such as GraphQL.
-            </Box>
+              Typescript. Using important frameworks such as GraphQL."
+              exampleTitle="Here is an example"
+              exampleLink="www.google.com"
+              img="img"
+            />
           </Grid>
           <Grid item xs={12}>
-            <Box>
-              Full Stack Development. Worked in full stack environments,
+            <InfoContent
+              title="full stack development"
+              mainText="Worked in full stack environments,
               developing in the full stack using a MERN solution stack. Focusing
               on using React with other core technologies to create innovative
-              web solutions.
-            </Box>
+              web solutions."
+              exampleTitle="Here is an example"
+              exampleLink="www.google.com"
+              img="img"
+            />
           </Grid>
           <Grid item xs={12}>
-            <Box>DevOps and Cloud Development</Box>
+            <InfoContent
+              title="devops and cloud development"
+              mainText="Contributed to working with DevOps deployment with Jenkins using a CI/CD style. Combined with usage of AWS to deploy applications and microservices. Training to become AWS Developer Certified"
+              exampleTitle="Here is an example"
+              exampleLink="www.google.com"
+              img="img"
+            />
           </Grid>
         </Grid>
       </FadeInSection>
