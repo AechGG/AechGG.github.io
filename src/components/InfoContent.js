@@ -54,6 +54,8 @@ const useStyles = makeStyles({
 
 // TODO: Create images for each section
 // TODO: Link images to pages etc
+// TODO: add this eventually to make them all dragable https://github.com/mui-org/material-ui/issues/5476
+// Also this https://www.framer.com/motion/
 const InfoContent = (props) => {
   const classes = useStyles();
   const { title, mainText, img, altImg } = props;
