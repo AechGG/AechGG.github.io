@@ -83,7 +83,7 @@ export default function CenteredGrid(props) {
               mainText="Creating App Solutions for multiple platforms in
               multiple languages and technologies including Swift, Flutter,
               React Native and Java"
-              exampleTitle="Here is an example"
+              altImg="App Development Technologies"
               exampleLink="www.google.com"
               img={swiftLogo}
             />
@@ -94,7 +94,7 @@ export default function CenteredGrid(props) {
               mainText="Experience in working in agile teams to
               develop back-end technologies using Java, Node.js, Python,
               Typescript. Using important frameworks such as GraphQL."
-              exampleTitle="Here is an example"
+              altImg="Backend Development Technologies"
               exampleLink="www.google.com"
               img="img"
             />
@@ -106,7 +106,7 @@ export default function CenteredGrid(props) {
               developing in the full stack using a MERN solution stack. Focusing
               on using React with other core technologies to create innovative
               web solutions."
-              exampleTitle="Here is an example"
+              altImg="Full Stack Development Technologies"
               exampleLink="www.google.com"
               img="img"
             />
@@ -115,7 +115,7 @@ export default function CenteredGrid(props) {
             <InfoContent
               title="devops and cloud development"
               mainText="Contributed to working with DevOps deployment with Jenkins using a CI/CD style. Combined with usage of AWS to deploy applications and microservices. Training to become AWS Developer Certified"
-              exampleTitle="Here is an example"
+              altImg="Devops Development Technologies"
               exampleLink="www.google.com"
               img="img"
             />

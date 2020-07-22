@@ -19,11 +19,14 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
   media: {
-    height: 200,
-    width: 200,
+    height: 300,
+    width: '100%',
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'center',
+  },
+  content: {
+    backgroundColor: 'transparent',
   },
   hide: {
     '-webkit-transition': 'opacity 0.5s ease-in-out',
@@ -51,22 +54,23 @@ const useStyles = makeStyles({
 
 const InfoContent = (props) => {
   const classes = useStyles();
-  const { title, mainText, exampleTitle, exampleLink, img } = props;
+  const { title, mainText, img, altImg } = props;
   return (
     <Card className={classes.root}>
       <CardActionArea
         className={classes.hide}
         onClick={() => console.log('click')}
       >
-        <CardMedia className={classes.media} image={img} title="image text" />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {mainText}
-          </Typography>
-        </CardContent>
+        <CardMedia className={classes.media} image={img} title={altImg}>
+          <CardContent className={classes.content}>
+            <Typography gutterBottom variant="h5" component="h2">
+              {title}
+            </Typography>
+            <Typography variant="body2" color="textPrimary" component="p">
+              {mainText}
+            </Typography>
+          </CardContent>
+        </CardMedia>
       </CardActionArea>
     </Card>
   );
