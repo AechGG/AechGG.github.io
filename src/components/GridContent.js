@@ -11,18 +11,18 @@ import swiftLogo from '../assets/swift.png';
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: theme.spacing(3),
-    paddingLeft: theme.spacing(1),
-    paddingRight: theme.spacing(1),
+    paddingLeft: theme.spacing(3),
+    paddingRight: theme.spacing(3),
     flexGrow: 1,
     width: '100%',
   },
   card: {
-    minHeight: 400,
+    minHeight: 300,
     maxHeight: 750,
+    width: '100%',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    width: '100%',
   },
   greeting: {
     fontSize: 50,
@@ -44,7 +44,7 @@ export default function CenteredGrid(props) {
     <div className={classes.root}>
       <FadeInSection>
         <Grid container spacing={3}>
-          <Grid item xs={12}>
+          <Grid item xs={8}>
             <Card className={classes.card}>
               <CardContent>
                 <Grid container spacing={3}>
@@ -77,7 +77,7 @@ export default function CenteredGrid(props) {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={4}>
             <InfoContent
               title="app development"
               mainText="Creating App Solutions for multiple platforms in
@@ -88,7 +88,7 @@ export default function CenteredGrid(props) {
               img={swiftLogo}
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={4}>
             <InfoContent
               title="back-end development"
               mainText="Experience in working in agile teams to
@@ -99,7 +99,7 @@ export default function CenteredGrid(props) {
               img="img"
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={4}>
             <InfoContent
               title="full stack development"
               mainText="Worked in full stack environments,
@@ -111,7 +111,7 @@ export default function CenteredGrid(props) {
               img="img"
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={4}>
             <InfoContent
               title="devops and cloud development"
               mainText="Contributed to working with DevOps deployment with Jenkins using a CI/CD style. Combined with usage of AWS to deploy applications and microservices. Training to become AWS Developer Certified"
