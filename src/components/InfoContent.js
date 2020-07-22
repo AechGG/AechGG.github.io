@@ -52,6 +52,8 @@ const useStyles = makeStyles({
   },
 });
 
+// TODO: Create images for each section
+// TODO: Link images to pages etc
 const InfoContent = (props) => {
   const classes = useStyles();
   const { title, mainText, img, altImg } = props;

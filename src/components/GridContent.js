@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
 export default function CenteredGrid(props) {
   const classes = useStyles();
 
+  // TODO: make sections fill out page
   return (
     <div className={classes.root}>
       <FadeInSection>
