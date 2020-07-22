@@ -52,29 +52,21 @@ const useStyles = makeStyles({
 const InfoContent = (props) => {
   const classes = useStyles();
   const { title, mainText, exampleTitle, exampleLink, img } = props;
-
-  const onMouseOver = () => {};
-
-  const onMouseOut = () => {};
   return (
-    <Card
-      className={classes.root}
-      onMouseOver={onMouseOver}
-      onMouseOut={onMouseOut}
-    >
-      <CardActionArea>
-        <div className={classes.hide}>
-          <CardMedia className={classes.media} image={img} title="image text" />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {title}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {mainText}
-            </Typography>
-          </CardContent>
-        </div>
-        <div className={classes.show}>{exampleTitle}</div>
+    <Card className={classes.root}>
+      <CardActionArea
+        className={classes.hide}
+        onClick={() => console.log('click')}
+      >
+        <CardMedia className={classes.media} image={img} title="image text" />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            {title}
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {mainText}
+          </Typography>
+        </CardContent>
       </CardActionArea>
     </Card>
   );
