@@ -29,6 +29,7 @@ import Home from './screens/Home';
 import useWindowSize from './services/useWindowSize';
 
 import './App.css';
+import Drawer from './components/Drawer';
 
 // TODO: Alter app bar to be responsive
 
@@ -60,11 +61,7 @@ function App() {
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
+    setOpen(!open);
   };
 
   const smallScreen = size.width > config.smallScreenWidth;
@@ -97,10 +94,18 @@ function App() {
                 height="50"
               />
             </Link>
-            {smallScreen ? <SquareHoverButton title="home" to="/" /> : null}
-            {smallScreen ? <SquareHoverButton title="about" to="/" /> : null}
-            {smallScreen ? <SquareHoverButton title="work" to="/" /> : null}
-            {smallScreen ? <SquareHoverButton title="contact" to="/" /> : null}
+            {smallScreen ? (
+              <SquareHoverButton title="home" to="/" border={true} />
+            ) : null}
+            {smallScreen ? (
+              <SquareHoverButton title="about" to="/" border={true} />
+            ) : null}
+            {smallScreen ? (
+              <SquareHoverButton title="work" to="/" border={true} />
+            ) : null}
+            {smallScreen ? (
+              <SquareHoverButton title="contact" to="/" border={true} />
+            ) : null}
             <div className={classes.grow} />
             {smallScreen ? (
               <a href={config.github} className={classes.socialLink}>
@@ -138,7 +143,16 @@ function App() {
             />
           </NavBar>
 
-          <Route exact path="/" component={Home} />
+          {open ? (
+            <Drawer>
+              <SquareHoverButton title="home" to="/" border={false} />
+              <SquareHoverButton title="about" to="/" border={false} />
+              <SquareHoverButton title="work" to="/" border={false} />
+              <SquareHoverButton title="contact" to="/" border={false} />
+            </Drawer>
+          ) : (
+            <Route exact path="/" component={Home} />
+          )}
         </HashRouter>
       </CssBaseline>
     </MuiThemeProvider>

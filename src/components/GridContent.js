@@ -43,7 +43,7 @@ export default function CenteredGrid(props) {
   return (
     <div className={classes.root}>
       <FadeInSection>
-        <Grid container spacing={6} direction="row" alignItems="stretch">
+        <Grid container spacing={6}>
           <Grid item xs={12}>
             <Card className={classes.card}>
               <CardContent>
