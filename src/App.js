@@ -31,8 +31,6 @@ import useWindowSize from './services/useWindowSize';
 import './App.css';
 import Drawer from './components/Drawer';
 
-// TODO: Alter app bar to be responsive
-
 const useStyles = makeStyles((theme) => ({
   grow: {
     flexGrow: 1,

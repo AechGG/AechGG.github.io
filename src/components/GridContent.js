@@ -6,8 +6,6 @@ import { Card, CardContent, Typography } from '@material-ui/core';
 import FadeInSection from './FadeInSection';
 import InfoContent from './InfoContent';
 
-import swiftLogo from '../assets/swift.png';
-
 const useStyles = makeStyles((theme) => ({
   root: {
     paddingTop: theme.spacing(6),
@@ -85,7 +83,7 @@ export default function CenteredGrid(props) {
               React Native and Java"
               altImg="App Development Technologies"
               exampleLink="www.google.com"
-              img={swiftLogo}
+              img="img"
             />
           </Grid>
           <Grid item xs>
