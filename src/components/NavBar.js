@@ -21,6 +21,7 @@ const useStyles = makeStyles({
 const NavBar = (props) => {
   const { children } = props;
   const classes = useStyles();
+
   return (
     <div>
       <AppBar position="static" className={classes.container} color="default">
