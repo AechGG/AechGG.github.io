@@ -13,8 +13,8 @@ const useStyles = makeStyles({
   toolbar: {
     width: '100%',
     alignItems: 'center',
-    paddingLeft: 60,
-    paddingRight: 60,
+    paddingLeft: '2%',
+    paddingRight: '2%',
   },
 });
 
