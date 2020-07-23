@@ -1,0 +1,23 @@
+# This workflow will run tests using Node.js
+
+name: Node.js Package
+
+on: [pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install
+        run: npm install
+
+      - name: Build
+        run: npm run build
+      # Include when I have tests
+      # - name: Test
+      #   uses: npm run test
