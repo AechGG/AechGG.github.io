@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import {
   MuiThemeProvider,
@@ -6,7 +7,9 @@ import {
   FormControlLabel,
   createMuiTheme,
   CssBaseline,
+  IconButton,
 } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
 import { HashRouter, Route, Link } from 'react-router-dom';
 
@@ -23,10 +26,10 @@ import linkedinWhite from './assets/linkedin-white-logo.png';
 import { useDarkMode } from './constants/theme';
 import config from './services/config.service';
 import Home from './screens/Home';
+import useWindowSize from './services/useWindowSize';
 
 import './App.css';
-
-// TODO: Alter app bar to be responsive
+import Drawer from './components/Drawer';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -38,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
       width: 'auto',
     },
   },
+  menuButton: {
+    marginLeft: theme.spacing(1),
+  },
 }));
 
 function App() {
@@ -48,11 +54,36 @@ function App() {
 
   const themeConfig = createMuiTheme(theme);
   const classes = useStyles();
+  const size = useWindowSize();
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleDrawerOpen = () => {
+    setOpen(!open);
+  };
+
+  const smallScreen = size.width > config.smallScreenWidth;
+
   return (
     <MuiThemeProvider theme={themeConfig}>
       <CssBaseline>
         <HashRouter basename="/">
           <NavBar>
+            {size.width < config.smallScreenWidth ? (
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                onClick={handleDrawerOpen}
+                edge="start"
+                className={clsx(classes.menuButton, open && classes.hide)}
+              >
+                <MenuIcon />
+              </IconButton>
+            ) : null}
+
+            {size.width < config.smallScreenWidth ? (
+              <div className={classes.grow} />
+            ) : null}
             <Link to="/">
               <img
                 src={theme.palette.type === 'dark' ? logoWhite : logoBlack}
@@ -61,29 +92,45 @@ function App() {
                 height="50"
               />
             </Link>
-            <SquareHoverButton title="home" to="/" />
-            <SquareHoverButton title="about" to="/" />
-            <SquareHoverButton title="work" to="/" />
-            <SquareHoverButton title="contact" to="/" />
+            {smallScreen ? (
+              <SquareHoverButton title="home" to="/" border={true} />
+            ) : null}
+            {smallScreen ? (
+              <SquareHoverButton title="about" to="/" border={true} />
+            ) : null}
+            {smallScreen ? (
+              <SquareHoverButton title="work" to="/" border={true} />
+            ) : null}
+            {smallScreen ? (
+              <SquareHoverButton title="contact" to="/" border={true} />
+            ) : null}
             <div className={classes.grow} />
-            <a href={config.github} className={classes.socialLink}>
-              <img
-                src={theme.palette.type === 'dark' ? githubWhite : githubBlack}
-                alt="github"
-                width="50"
-                height="50"
-              />
-            </a>
-            <a href={config.linkedin} className={classes.socialLink}>
-              <img
-                src={
-                  theme.palette.type === 'dark' ? linkedinWhite : linkedinBlack
-                }
-                alt="linkedin"
-                width="50"
-                height="50"
-              />
-            </a>
+            {smallScreen ? (
+              <a href={config.github} className={classes.socialLink}>
+                <img
+                  src={
+                    theme.palette.type === 'dark' ? githubWhite : githubBlack
+                  }
+                  alt="github"
+                  width="50"
+                  height="50"
+                />
+              </a>
+            ) : null}
+            {smallScreen ? (
+              <a href={config.linkedin} className={classes.socialLink}>
+                <img
+                  src={
+                    theme.palette.type === 'dark'
+                      ? linkedinWhite
+                      : linkedinBlack
+                  }
+                  alt="linkedin"
+                  width="50"
+                  height="50"
+                />
+              </a>
+            ) : null}
             <FormControlLabel
               control={
                 <Switch
@@ -94,7 +141,16 @@ function App() {
             />
           </NavBar>
 
-          <Route exact path="/" component={Home} />
+          {open ? (
+            <Drawer>
+              <SquareHoverButton title="home" to="/" border={false} />
+              <SquareHoverButton title="about" to="/" border={false} />
+              <SquareHoverButton title="work" to="/" border={false} />
+              <SquareHoverButton title="contact" to="/" border={false} />
+            </Drawer>
+          ) : (
+            <Route exact path="/" component={Home} />
+          )}
         </HashRouter>
       </CssBaseline>
     </MuiThemeProvider>

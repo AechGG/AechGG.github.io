@@ -13,14 +13,15 @@ const useStyles = makeStyles({
   toolbar: {
     width: '100%',
     alignItems: 'center',
-    paddingLeft: 60,
-    paddingRight: 60,
+    paddingLeft: '2%',
+    paddingRight: '2%',
   },
 });
 
 const NavBar = (props) => {
   const { children } = props;
   const classes = useStyles();
+
   return (
     <div>
       <AppBar position="static" className={classes.container} color="default">

@@ -1,17 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275,
-    minHeight: 200,
-    // display: 'flex',
+    width: '100%',
+    height: '100%',
   },
   title: {
     fontSize: 14,
@@ -20,35 +18,63 @@ const useStyles = makeStyles({
     marginBottom: 12,
   },
   media: {
-    height: 200,
-    width: 200,
+    height: 300,
+    width: '100%',
     display: 'flex',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'center',
+  },
+  content: {
+    backgroundColor: 'transparent',
+  },
+  hide: {
+    '-webkit-transition': 'opacity 0.5s ease-in-out',
+    '-moz-transition': 'opacity 0.5s ease-in-out',
+    '-ms-transition': 'opacity 0.5s ease-in-out',
+    '-o-transition': 'opacity 0.5s ease-in-out',
+    transition: 'opacity 0.5s ease-in-out',
+    opacity: 1,
+    '&:hover': {
+      opacity: 0.5,
+    },
+  },
+  show: {
+    '-webkit-transition': 'opacity 0.5s ease-in-out',
+    '-moz-transition': 'opacity 0.5s ease-in-out',
+    '-ms-transition': 'opacity 0.5s ease-in-out',
+    '-o-transition': 'opacity 0.5s ease-in-out',
+    transition: 'opacity 0.5s ease-in-out',
+    opacity: 0,
+    '&:hover': {
+      opacity: 1,
+    },
   },
 });
 
+// TODO: Create images for each section
+// TODO: Link images to pages etc
+// TODO: add this eventually to make them all dragable https://github.com/mui-org/material-ui/issues/5476
+// Also this https://www.framer.com/motion/
 const InfoContent = (props) => {
   const classes = useStyles();
-  const { title, mainText, exampleTitle, exampleLink, img } = props;
-
+  const { title, mainText, img, altImg } = props;
   return (
-    <Card className={classes.root} variant="outlined">
-      <CardContent>
-        <Typography variant="h5" component="h2">
-          {title}
-        </Typography>
-        <Typography variant="body2" component="p">
-          {mainText}
-        </Typography>
-        {/* <Typography className={classes.pos} color="textSecondary">
-          {exampleText}
-        </Typography> */}
-      </CardContent>
-      <CardActions>
-        <Button size="small">Example: {exampleTitle}</Button>
-      </CardActions>
-      {/* <CardMedia className={classes.media} image={img} title={title} /> */}
+    <Card className={classes.root}>
+      <CardActionArea
+        className={classes.hide}
+        onClick={() => console.log('click')}
+      >
+        <CardMedia className={classes.media} image={img} title={altImg}>
+          <CardContent className={classes.content}>
+            <Typography gutterBottom variant="h5" component="h2">
+              {title}
+            </Typography>
+            <Typography variant="body2" color="textPrimary" component="p">
+              {mainText}
+            </Typography>
+          </CardContent>
+        </CardMedia>
+      </CardActionArea>
     </Card>
   );
 };
