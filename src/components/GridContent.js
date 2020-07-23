@@ -10,15 +10,15 @@ import swiftLogo from '../assets/swift.png';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    paddingTop: theme.spacing(3),
+    paddingTop: theme.spacing(6),
     paddingLeft: theme.spacing(3),
     paddingRight: theme.spacing(3),
     flexGrow: 1,
     width: '100%',
+    height: '100%',
   },
   card: {
-    minHeight: 300,
-    maxHeight: 750,
+    height: '100%',
     width: '100%',
     display: 'flex',
     justifyContent: 'center',
@@ -44,8 +44,8 @@ export default function CenteredGrid(props) {
   return (
     <div className={classes.root}>
       <FadeInSection>
-        <Grid container spacing={3}>
-          <Grid item xs={8}>
+        <Grid container spacing={6} direction="row" alignItems="stretch">
+          <Grid item xs={12}>
             <Card className={classes.card}>
               <CardContent>
                 <Grid container spacing={3}>
@@ -78,7 +78,7 @@ export default function CenteredGrid(props) {
               </CardContent>
             </Card>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs>
             <InfoContent
               title="app development"
               mainText="Creating App Solutions for multiple platforms in
@@ -89,7 +89,7 @@ export default function CenteredGrid(props) {
               img={swiftLogo}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs>
             <InfoContent
               title="back-end development"
               mainText="Experience in working in agile teams to
@@ -100,7 +100,7 @@ export default function CenteredGrid(props) {
               img="img"
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs>
             <InfoContent
               title="full stack development"
               mainText="Worked in full stack environments,
@@ -112,7 +112,7 @@ export default function CenteredGrid(props) {
               img="img"
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs>
             <InfoContent
               title="devops and cloud development"
               mainText="Contributed to working with DevOps deployment with Jenkins using a CI/CD style. Combined with usage of AWS to deploy applications and microservices. Training to become AWS Developer Certified"
