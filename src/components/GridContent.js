@@ -40,7 +40,6 @@ const useStyles = makeStyles((theme) => ({
 export default function CenteredGrid(props) {
   const classes = useStyles();
 
-  // TODO: make sections fill out page
   return (
     <div className={classes.root}>
       <FadeInSection>
@@ -59,17 +58,17 @@ export default function CenteredGrid(props) {
                       i'm harrison
                     </Typography>
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid item xs>
                     <Typography className={classes.specifics}>
                       app developer
                     </Typography>
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid item xs>
                     <Typography className={classes.specifics}>
                       back-end developer
                     </Typography>
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid item xs>
                     <Typography className={classes.specifics}>
                       full stack developer
                     </Typography>
