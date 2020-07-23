@@ -93,7 +93,7 @@ function App() {
               />
             </Link>
             {smallScreen ? (
-              <SquareHoverButton title="test" to="/" border={true} />
+              <SquareHoverButton title="home" to="/" border={true} />
             ) : null}
             {smallScreen ? (
               <SquareHoverButton title="about" to="/" border={true} />
