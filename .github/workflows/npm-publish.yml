@@ -5,7 +5,7 @@ name: Node.js Package
 
 on:
   # Trigger the workflow on push or pull request,
-  # but only for the master branch
+  # but only for the source branch
   push:
     branches:
       - source
@@ -21,7 +21,7 @@ jobs:
       - run: npm install
       - run: npm build
 
-  publish-gpr:
+  publish-ghp:
     needs: build
     runs-on: ubuntu-latest
     steps:
