@@ -3,6 +3,7 @@ import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 import { NavLink } from 'react-router-dom';
 import { Typography } from '@material-ui/core';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -30,13 +31,24 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const SquareHoverButton = (props) => {
-  const { title, to, border } = props;
+  const { title, to, border, onClick } = props;
   const classes = useStyles();
   return (
-    <NavLink to={to} className={clsx(classes.link, border && classes.border)}>
+    <NavLink
+      to={to}
+      className={clsx(classes.link, border && classes.border)}
+      onClick={onClick}
+    >
       <Typography variant="inherit" color="textPrimary">
         {title}
       </Typography>
     </NavLink>
   );
+};
+
+SquareHoverButton.propTypes = {
+  title: PropTypes.string.isRequired,
+  to: PropTypes.string.isRequired,
+  border: PropTypes.bool.isRequired,
+  onClick: PropTypes.func,
 };
