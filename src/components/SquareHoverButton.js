@@ -30,10 +30,14 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const SquareHoverButton = (props) => {
-  const { title, to, border } = props;
+  const { title, to, border, onClick } = props;
   const classes = useStyles();
   return (
-    <NavLink to={to} className={clsx(classes.link, border && classes.border)}>
+    <NavLink
+      to={to}
+      className={clsx(classes.link, border && classes.border)}
+      onClick={onClick}
+    >
       <Typography variant="inherit" color="textPrimary">
         {title}
       </Typography>

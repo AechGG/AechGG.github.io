@@ -26,6 +26,9 @@ import linkedinWhite from './assets/linkedin-white-logo.png';
 import { useDarkMode } from './constants/theme';
 import config from './services/config.service';
 import Home from './screens/Home';
+import Contact from './screens/Contact';
+import Work from './screens/Work';
+import About from './screens/About';
 import useWindowSize from './services/useWindowSize';
 
 import './App.css';
@@ -96,13 +99,13 @@ function App() {
               <SquareHoverButton title="home" to="/" border={true} />
             ) : null}
             {smallScreen ? (
-              <SquareHoverButton title="about" to="/" border={true} />
+              <SquareHoverButton title="about" to="/about" border={true} />
             ) : null}
             {smallScreen ? (
-              <SquareHoverButton title="work" to="/" border={true} />
+              <SquareHoverButton title="work" to="/work" border={true} />
             ) : null}
             {smallScreen ? (
-              <SquareHoverButton title="contact" to="/" border={true} />
+              <SquareHoverButton title="contact" to="/contact" border={true} />
             ) : null}
             <div className={classes.grow} />
             {smallScreen ? (
@@ -143,14 +146,36 @@ function App() {
 
           {open ? (
             <Drawer>
-              <SquareHoverButton title="home" to="/" border={false} />
-              <SquareHoverButton title="about" to="/" border={false} />
-              <SquareHoverButton title="work" to="/" border={false} />
-              <SquareHoverButton title="contact" to="/" border={false} />
+              <SquareHoverButton
+                title="home"
+                to="/"
+                border={false}
+                onClick={handleDrawerOpen}
+              />
+              <SquareHoverButton
+                title="about"
+                to="/about"
+                border={false}
+                onClick={handleDrawerOpen}
+              />
+              <SquareHoverButton
+                title="work"
+                to="/work"
+                border={false}
+                onClick={handleDrawerOpen}
+              />
+              <SquareHoverButton
+                title="contact"
+                to="/contact"
+                border={false}
+                onClick={handleDrawerOpen}
+              />
             </Drawer>
-          ) : (
-            <Route exact path="/" component={Home} />
-          )}
+          ) : null}
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/work" component={Work} />
+          <Route exact path="/contact" component={Contact} />
         </HashRouter>
       </CssBaseline>
     </MuiThemeProvider>
