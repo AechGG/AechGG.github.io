@@ -1,0 +1,35 @@
+# AechGG.github.io
+
+## Running application
+
+For local start up use:
+
+```bash
+npm install
+npm start
+```
+
+### Docker Application
+
+Use docker:
+```bash
+docker build -t my-app:dev .
+docker run \
+    -it \
+    --rm \
+    -v ${PWD}:/app \
+    -v /app/node_modules \
+    -p 3001:3000 \
+    -e CHOKIDAR_USEPOLLING=true \
+    my-app:dev
+```
+
+Docker Command Explained:
+1. The docker run comamnd creates and runs a new container instance from the image we just created ('my-app:dev')
+2. -it starts the container in interactive mode. Due to react-scripts may exit after start-up (unless CI mode is specified) which will cause the container to exit
+3. --rm removes the container and columes after the container exits
+4. -v ${PWD}:/app mounts the code into the container at '/app'
+5. -v /app/node_modules will configure another volume for node_modules
+6. -p 3001:3000 exposes port 3000 to other Docker containers on the same network (for inter-container communication) and port 3001 to the host
+7. -e CHOKIDAR_USEPOLLING=true enables a polling mechanism so that hot-reloading with work
+
