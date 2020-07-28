@@ -19,7 +19,7 @@ docker run \
     --rm \
     -v ${PWD}:/app \
     -v /app/node_modules \
-    -p 3001:3000 \
+    -p 3000:3000 \
     -e CHOKIDAR_USEPOLLING=true \
     my-app:dev
 ```
@@ -30,6 +30,6 @@ Docker Command Explained:
 3. --rm removes the container and columes after the container exits
 4. -v ${PWD}:/app mounts the code into the container at '/app'
 5. -v /app/node_modules will configure another volume for node_modules
-6. -p 3001:3000 exposes port 3000 to other Docker containers on the same network (for inter-container communication) and port 3001 to the host
+6. -p 3001:3000 exposes port 3000 to other Docker containers on the same network (for inter-container communication) and port 3000 to the host
 7. -e CHOKIDAR_USEPOLLING=true enables a polling mechanism so that hot-reloading with work
 
