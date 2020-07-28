@@ -11,7 +11,7 @@ npm start
 
 ### Docker Application
 
-Use docker:
+Use Docker:
 ```bash
 docker build -t my-app:dev .
 docker run \
@@ -32,4 +32,9 @@ Docker Command Explained:
 5. -v /app/node_modules will configure another volume for node_modules
 6. -p 3001:3000 exposes port 3000 to other Docker containers on the same network (for inter-container communication) and port 3000 to the host
 7. -e CHOKIDAR_USEPOLLING=true enables a polling mechanism so that hot-reloading with work
+
+Using Docker Compose:
+```bash
+docker-compose up -d --build
+```
 
